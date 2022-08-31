@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.testimoniales{
+    display: flex;
+    flex-direction: column;
+    h3{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &::after{
+            content: '';
+            background-color: v.$grisOscuro;
+            width:10rem;
+            height: .3rem;
+        }
+    }
+}
+.testimonial{
+    background-color: v.$verde;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+    blockquote, p{
+        color: v.$blanco;
+        margin: 0;
+        font-size: 2.4rem;
+    }
+    blockquote{
+       padding-left: 4rem;
+       position: relative;
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            background-image: url('/build/img/comilla.svg');
+            background-repeat: no-repeat;
+            width: 5rem;
+            height: 3rem;
+            display: block;
+        }
+    }
+    p{
+        text-align: right;
+        font-weight: v.$bold;
+    }
+}

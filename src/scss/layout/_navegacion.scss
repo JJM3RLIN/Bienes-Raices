@@ -1,0 +1,106 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.derecha{
+    display: none;
+    @include m.tablet{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .dark-mode-boton{
+        width: 3rem;
+        margin: 3rem 0;
+        filter: invert(100%);
+        cursor: pointer;
+        @include m.tablet{
+            margin:0;
+            margin-bottom: 2rem;
+        }
+    }
+}
+.barra{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding-top: 3rem;
+    height: auto;
+    transition: height .3s ease-in-out;
+    @include m.tablet{
+     display: grid;
+    grid-template-columns: 30% 70%;
+    place-items: center;
+    align-items: end;
+    }
+
+}
+
+.navegacion{
+display: none;
+ order: 2;
+//visibility: hidden;
+opacity: 0;
+transition:  opacity 1s linear;
+    @include m.tablet{
+        opacity: 1;
+        //visibility: visible;
+        display:flex;
+        align-items: center;
+    }
+   a{
+    color: v.$blanco;
+    text-decoration: none;
+    font-size: 2.2rem;
+    display: block;
+    text-align: center;
+  
+    @include m.tablet{
+        margin-right: 2rem;
+        &:last-of-type{
+            margin-right: 0;
+        }
+    }
+   }
+   a:hover{
+       color: lighten($color: v.$amarillo, $amount: 10);
+   }
+}
+//fijar la navegación
+.fijar{
+    z-index: 100000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 5rem;
+    background-color: v.$grisOscuro;
+    box-shadow: 0 0 2rem v.$negro;
+}
+
+//Menu hamburguesa
+.logo-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    order:1;  //wrap
+    width: 100%;
+    @include m.tablet{
+     order:initial;
+    }
+}
+.menu-hamburguesa{
+    width: 5rem;
+    cursor: pointer;
+    @include m.tablet{
+        display:none;
+    }
+}
+.mostrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   //visibility: visible;
+   opacity: 1;
+}

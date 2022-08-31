@@ -1,0 +1,46 @@
+@use 'base/variables' as v;
+.dark-mode{
+    background-color: darken($color: v.$grisOscuro, $amount: 5);
+    p{
+        color: v.$blanco;
+    }
+    h1, h2, h3, h4{
+        color: v.$gris;
+    }
+    .anuncio, .resumen-propiedad{
+       
+        background-color: v.$grisOscuro;
+        border: 1px solid v.$grisOscuro;
+        .precio{
+            color: v.$verde;
+         
+        }
+
+        .color-icono{
+        filter: invert(100%);
+        }
+    }
+.resumen-propiedad{
+    padding: 0 2rem;
+}
+    .texto-nosotros{
+        
+        blockquote{
+           color: v.$blanco;
+        }
+       }
+       .formulario{
+           label, legend, p{
+             color: v.$gris;
+           }
+
+           input:not([type="button"]), textarea, select{
+               background-color: v.$grisOscuro;
+               color: v.$blanco;
+               border: 1px solid v.$grisOscuro;
+           }
+       }
+       td{
+           color: v.$blanco;
+       }
+}
